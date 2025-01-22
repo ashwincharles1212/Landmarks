@@ -7,9 +7,9 @@ class SharedData: ObservableObject {
     @Published var pronouns: String = "he/him"
     @Published var mode = true
     @Published var topColor: Color = Color(.white)
-    @Published var buttoncolor: Color = Color(.gray)
+    @Published var buttoncolor: Color = Color("rightblue")
     @Published var textColor: Color = Color(.black)
-    @Published var lighttext: Color = Color(.gray)
+    @Published var lighttext: Color = Color(.peach)
 }
 public struct homebar: View {
     public var body: some View {
@@ -79,11 +79,11 @@ struct ContentView: View {
                         if sharedData.mode {
                             sharedData.topColor = .white
                             sharedData.textColor = .black
-                            sharedData.lighttext = .gray
+                            sharedData.lighttext = Color(.peach)
                         } else {
                             sharedData.topColor = .black
                             sharedData.textColor = .white
-                            sharedData.lighttext = .gray
+                            sharedData.lighttext = Color(.peach)
                         }
                     }
                     .padding(.top, 50)

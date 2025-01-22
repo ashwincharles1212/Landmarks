@@ -33,46 +33,51 @@ struct dashboard: View {
                                 .shadow(radius: 10)
                             
                             // Quote Text
-                            Text("”Worrying does not take away tomorrow's troubles. It takes away today's peace.”")
-                                .foregroundColor(sharedData.textColor)
-                                .font(.custom("Jua", size: 14))
-                                .frame(width: 300)
-                                .padding(.top, 20)
+                
+                                Text("”Worrying does not take away tomorrow's troubles. It takes away today's peace.”")
+                                    .foregroundColor(sharedData.textColor)
+                                    .font(.custom("Jua", size: 14))
+                                    .frame(width: 300)
+                                    .padding(.top, 20)
+    
                             
                             Text("~ Randy Armstrong")
-                                .foregroundColor(sharedData.lighttext)
+                                .foregroundColor(sharedData.textColor)
                                 .font(.custom("Jua", size: 10))
                                 .frame(width: 100)
                                 .padding(.top, 5)
                             
                             // Check-In Button
                             Button(action: {}) {
-                                Text("Start a Check in")
+                                Text("Start a Check in").textCase(.uppercase)
                                     .font(.custom("Jua", size: 15))
                                     .frame(width: 150, height: 50)
-                                    .foregroundColor(sharedData.textColor)
+                                    .foregroundColor(sharedData.lighttext)
                                     .background(sharedData.buttoncolor)
                                     .cornerRadius(10)
                                     .padding(25)
                             }
                             
                             // Dashboard Header
-                            Text("DASHBOARD")
-                                .foregroundColor(sharedData.textColor)
-                                .font(.custom("Jua", size: 20))
-                                .frame(width: 300)
-                                .padding(.top, 20)
-                                .padding(.trailing, 150)
+                           
+                                
+                                Text("DASHBOARD")
+                                    .foregroundColor(sharedData.textColor)
+                                    .font(.custom("Jua", size: 20))
+                                    .frame(width: 300)
+                                    .padding(.top, 20)
+                                    .padding(.trailing, 150)
+                                
+                                // Progress Bar
+                                ProgressBar(currency: $currency, bar: Color("rightblue"), lighttext: sharedData.lighttext)
+                                    .padding(.bottom, 50)
+                           
+                                Text("REWARDS")
+                                    .foregroundColor(sharedData.textColor)
+                                    .font(.custom("Jua", size: 20))
+                                    .frame(width: 300, height: 50)
+                                    .padding(.trailing, 170)
                             
-                            // Progress Bar
-                            ProgressBar(currency: $currency, bar: .yellow, lighttext: sharedData.lighttext)
-                                .padding(.bottom, 50)
-                            
-                            Text("REWARDS")
-                                .foregroundColor(sharedData.textColor)
-                                .font(.custom("Jua", size: 20))
-                                .frame(width: 300, height: 50)
-                                .padding(.trailing, 170)
                             
                             // Horizontal ScrollView for Images
                             ScrollView(.horizontal, showsIndicators: false) {
@@ -93,6 +98,7 @@ struct dashboard: View {
                                     }
                                 }
                             }
+                            
                         }
                     }
                     homebar()
